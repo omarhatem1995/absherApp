@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.syncApps.absherApp.ui.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_serviceDetailsFragment"
+            app:destination="@id/serviceDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.syncApps.absherApp.ui.main.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.syncApps.absherApp.ui.main.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/actionGoToChangeLanguage"
+            app:destination="@id/changeLanguageFragment" />
+        <action
+            android:id="@+id/actionGoToLoginFromSetting"
+            app:destination="@id/loginFragment3" />
+        <action
+            android:id="@+id/action_settingFragment_to_complainsAndSuggestionsFragment"
+            app:destination="@id/complainsAndSuggestionsFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_previousWorksFragment"
+            app:destination="@id/previousWorksFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_orderHistoryFragment"
+            app:destination="@id/orderHistoryFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/changeLanguageFragment"
+        android:name="com.syncApps.absherApp.ui.main.ChangeLanguageFragment"
+        android:label="fragment_change_language"
+        tools:layout="@layout/fragment_change_language" />
+    <fragment
+        android:id="@+id/loginFragment3"
+        android:name="com.syncApps.absherApp.ui.signinup.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <argument
+            android:name="from"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/serviceDetailsFragment"
+        android:name="com.syncApps.absherApp.ui.main.ServiceDetailsFragment"
+        android:label="fragment_service_details"
+        tools:layout="@layout/fragment_service_details" >
+
+        <argument
+            android:name="service"
+            app:argType="com.syncApps.absherApp.model.Service"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_serviceDetailsFragment_to_orderServiceFragment"
+            app:destination="@id/orderServiceFragment" />
+        <action
+            android:id="@+id/action_serviceDetailsFragment_to_loginFragment3"
+            app:destination="@id/loginFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderServiceFragment"
+        android:name="com.syncApps.absherApp.ui.main.OrderServiceFragment"
+        android:label="fragment_order_service"
+        tools:layout="@layout/fragment_order_service" >
+        <argument
+            android:name="service"
+            app:argType="com.syncApps.absherApp.model.Service"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_orderServiceFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment" />
+        <action
+            android:id="@+id/action_orderServiceFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.syncApps.absherApp.ui.main.AddAddressFragment"
+        android:label="fragment_add_address"
+        tools:layout="@layout/fragment_add_address" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.syncApps.absherApp.ui.main.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.syncApps.absherApp.ui.main.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/complainsAndSuggestionsFragment"
+        android:name="com.syncApps.absherApp.ui.main.ComplainsAndSuggestionsFragment"
+        android:label="fragment_complains_and_suggestions"
+        tools:layout="@layout/fragment_complains_and_suggestions" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.syncApps.absherApp.ui.main.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/previousWorksFragment"
+        android:name="com.syncApps.absherApp.ui.main.PreviousWorksFragment"
+        android:label="fragment_previous_works"
+        tools:layout="@layout/fragment_previous_works" />
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.syncApps.absherApp.ui.main.OrderDetailsFragment"
+        android:label="fragment_order_details"
+        tools:layout="@layout/fragment_order_details" >
+        <argument
+            android:name="order"
+            app:argType="com.syncApps.absherApp.model.Order"
+            app:nullable="true" />
+<!--        <argument
+            android:name="shared_order"
+            app:argType="com.syncApps.absherApp.model.SharedOrderForNotification"
+            app:nullable="true" />-->
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_reviewOrderFragment"
+            app:destination="@id/reviewOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderHistoryFragment"
+        android:name="com.syncApps.absherApp.ui.main.OrderHistoryFragment"
+        android:label="fragment_order_history"
+        tools:layout="@layout/fragment_order_history" >
+        <action
+            android:id="@+id/action_orderHistoryFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/reviewOrderFragment"
+        android:name="com.syncApps.absherApp.ui.main.ReviewOrderFragment"
+        android:label="fragment_review_order"
+        tools:layout="@layout/fragment_review_order" >
+        <argument
+            android:name="order"
+            app:argType="com.syncApps.absherApp.model.Order"
+            app:nullable="true" />
+
+    </dialog>
+
+    <!--    <include app:graph="@navigation/nav_fragment_home" />-->
+<!--    <include app:graph="@navigation/nav_orders" />-->
+<!--    <include app:graph="@navigation/nav_setting" />-->
+</navigation>

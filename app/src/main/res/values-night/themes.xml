@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.absherApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_200</item>
+        <item name="colorPrimaryVariant">@color/primary_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/almarai</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="searchIcon">@drawable/ic_baseline_dark_search_24</item>
+        <item name="closeIcon">@null</item>
+        <item name="goIcon">@drawable/ic_baseline_dark_search_24</item>
+        <item name="commitIcon">@drawable/ic_baseline_dark_search_24</item>
+        <item name="android:editTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:colorPressedHighlight">@null</item>
+        <item name="android:iconifiedByDefault">false</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_search_24</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_color</item>
+        <item name="android:textColorHighlight">@color/search_cursor</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="queryBackground">@drawable/radius_drawable</item>
+        <item name="searchHintIcon">@null</item>
+        <item name="queryHint">@string/service_search_hint</item>
+    </style>
+    <!--    <item name="android:iconifiedByDefault">false</item>-->
+    <!--    <item name="android:drawableStart">@drawable/ic_baseline_search_24</item>-->
+    <!--    <item name="android:drawablePadding">10dp</item>-->
+
+    <!--    <item name="android:inputType">textNoSuggestions</item>-->
+    <!--    <item name="android:colorPressedHighlight">@null</item>-->
+    <!--    <item name="android:clickable">true</item>-->
+    <!--    <item name="android:textCursorDrawable">@drawable/cursor_query_color</item>-->
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="RatingTheme"  parent="Widget.AppCompat.RatingBar">
+        <item name="colorControlActivated">@color/primary_200</item>
+    </style>
+
+</resources>

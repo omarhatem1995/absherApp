@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_setting"
+    app:startDestination="@id/settingFragment2">
+
+    <fragment
+        android:id="@+id/settingFragment2"
+        android:name="com.syncApps.absherApp.ui.main.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/actionGoToLangChange"
+            app:destination="@id/changeLanguageFragment2" />
+    </fragment>
+    <dialog
+        android:id="@+id/changeLanguageFragment2"
+        android:name="com.syncApps.absherApp.ui.main.ChangeLanguageFragment"
+        android:label="fragment_change_language"
+        tools:layout="@layout/fragment_change_language" >
+        <deepLink
+            android:id="@+id/deepLinkLogin"
+            app:uri="myapp://changeLanguageFragment" />
+    </dialog>
+</navigation>
